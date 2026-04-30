@@ -17,7 +17,7 @@ export const ReinModeOptionsAxis = [
 export const ButtonOptions = [
   { label: 'Mouse Move', value: 'MouseMove' },
   { label: 'Mouse Button', value: 'MouseButton' },
-  { label: 'Joystick', value: 'Joystick' },
+  { label: 'Analog', value: 'Analog' },
   { label: 'Keyboard', value: 'Keyboard' },
   { label: 'Gamepad', value: 'Gamepad' },
   { label: 'Macro', value: 'Macro' },
@@ -26,16 +26,16 @@ export const ButtonOptions = [
 export const MacroOptions = [
   { label: 'Mouse Move', value: 'MouseMove' },
   { label: 'Mouse Button', value: 'MouseButton' },
-  { label: 'Joystick', value: 'Joystick' },
+  { label: 'Analog', value: 'Analog' },
   { label: 'Keyboard', value: 'Keyboard' },
   { label: 'Gamepad', value: 'Gamepad' },
 ] as const
 
 export const ActionOptions = [
   { label: 'Tap', value: 'Tap' },
-  { label: 'Hold', value: 'Toggle' },
+  { label: 'Hold', value: 'Hold' },
   { label: 'Toggle', value: 'Toggle' },
-  { label: 'ToggleOn', value: 'ToggleOn' },
-  { label: 'ToggleOff', value: 'ToggleOff' },
+  { label: 'Toggle On', value: 'ToggleOn' },
+  { label: 'Toggle Off', value: 'ToggleOff' },
   { label: 'Multitap', value: 'Multitap' },
 ] as const

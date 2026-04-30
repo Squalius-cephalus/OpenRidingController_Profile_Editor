@@ -9,12 +9,30 @@ function setDefaultKeycode(step: MacroStep) {
   step.Keycode = getKeycodes(step.Mode as Mode)?.[0]?.value ?? ''
 }
 
-function GetAnalogPlaceholders() {
-  return 'FIX THIS'
+function getAnalogPlaceholder(mode: string) {
+  switch (mode) {
+    case 'Analog':
+      return '-127 - 127'
+
+    case 'MouseMove':
+      return 'Distance'
+
+    default:
+      return 'Value'
+  }
 }
 
-function GetValuePlaceholders() {
-  return 'FIX THIS'
+function getValuePlaceholder(action: string) {
+  switch (action) {
+    case 'Hold':
+      return 'Seconds'
+
+    case 'Multitap':
+      return 'Tap count'
+
+    default:
+      return 'Value'
+  }
 }
 function maxSteps() {
   return 128
@@ -67,7 +85,7 @@ function removeStep(btn: ButtonConfig, si: number) {
         type="number"
         :step="maxSteps()"
         v-model.number="btn.Value"
-        :placeholder="GetValuePlaceholders()"
+        :placeholder="getValuePlaceholder(btn.Action)"
         :disabled="!['Hold', 'Multitap'].includes(btn.Action)"
         :min="0"
         :max="10"
@@ -78,7 +96,7 @@ function removeStep(btn: ButtonConfig, si: number) {
         type="number"
         step="1"
         v-model.number="btn['AnalogValue']"
-        :placeholder="GetAnalogPlaceholders()"
+        :placeholder="getAnalogPlaceholder(btn.Action)"
         :min="-127"
         :max="127"
         :disabled="!['Analog', 'MouseMove'].includes(btn.Mode)"
@@ -106,7 +124,7 @@ function removeStep(btn: ButtonConfig, si: number) {
           <input
             type="number"
             v-model.number="step.Value"
-            :placeholder="GetValuePlaceholders()"
+            :placeholder="getValuePlaceholder(btn.Action)"
             :disabled="!['Hold', 'Multitap'].includes(step.Action)"
             :step="maxSteps()"
             :min="0"
@@ -117,7 +135,7 @@ function removeStep(btn: ButtonConfig, si: number) {
             type="number"
             v-model.number="step['AnalogValue']"
             :disabled="!['MouseMove', 'Analog'].includes(step.Mode)"
-            :placeholder="GetAnalogPlaceholders()"
+            :placeholder="getAnalogPlaceholder(step.Mode)"
             :min="-127"
             :max="127"
           />

@@ -117,6 +117,56 @@ function removeProfile() {
   }
 }
 
+function importProfile(event: Event) {
+  const input = event.target as HTMLInputElement
+  const file = input.files?.[0]
+
+  if (!file) return
+
+  const reader = new FileReader()
+
+  reader.onload = () => {
+    try {
+      const parsed = JSON.parse(reader.result as string)
+
+      if (!Array.isArray(parsed.profiles)) {
+        alert('Invalid profiles file')
+        return
+      }
+
+      const list = parsed.profiles.map((p: Profile, i: number) => `${i}: ${p.Name}`).join('\n')
+
+      const selected = prompt(`Select profile index to import:\n\n${list}`)
+
+      if (selected === null) return
+
+      const index = Number(selected)
+
+      if (Number.isNaN(index) || index < 0 || index >= parsed.profiles.length) {
+        alert('Invalid profile index')
+        return
+      }
+
+      const profile = parsed.profiles[index] as Profile
+
+      if (nameExists(profile.Name)) {
+        alert('Profile name already exists!')
+        return
+      }
+
+      profiles.value.push(profile)
+
+      selectedIndex.value = profiles.value.length - 1
+    } catch {
+      alert('Invalid JSON file')
+    }
+
+    input.value = ''
+  }
+
+  reader.readAsText(file)
+}
+
 function clone<T>(obj: T): T {
   return JSON.parse(JSON.stringify(obj))
 }
@@ -137,6 +187,7 @@ function clone<T>(obj: T): T {
             @rename="renameProfile"
             @add="addProfile"
             @remove="removeProfile"
+            @import-profile="importProfile"
           />
         </div>
 

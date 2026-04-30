@@ -24,17 +24,16 @@ const nunchuckmode = defineModel<NunchuckMode>()
           {{ opt.label }}
         </option>
       </select>
-
-      <div>
-        <label>Sensitivity</label>
-        <input
-          type="number"
-          step="0.1"
-          v-model.number="nunchuckmode.Sensitivity"
-          :min="0.1"
-          :max="10"
-        />
-      </div>
+    </div>
+    <div>
+      <label>Sensitivity</label>
+      <input
+        type="number"
+        step="0.1"
+        v-model.number="nunchuckmode.Sensitivity"
+        :min="0.1"
+        :max="10"
+      />
     </div>
   </div>
 </template>
