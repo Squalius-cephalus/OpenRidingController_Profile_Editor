@@ -17,18 +17,6 @@ const visible = ref(false)
 
     <div v-if="visible">
       <div>
-        <h3>Stirrups</h3>
-        <label> Forward Threshold</label>
-        <input type="number" v-model.number="settings.StirrupsForwardThreshold" />
-
-        <label> Backward Threshold</label>
-        <input type="number" v-model.number="settings.StirrupsBackwardThreshold" />
-
-        <label> Dead Zone</label>
-        <input type="number" v-model.number="settings.StirrupsDeadZone" />
-      </div>
-
-      <div>
         <h3>Reins</h3>
         <label> Threshold Slow Down</label>
         <input type="number" v-model.number="settings.ReinsThresholdSlowDown" />

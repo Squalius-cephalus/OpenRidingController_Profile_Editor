@@ -258,11 +258,11 @@ input {
 }
 
 select {
-  min-width: 150px;
+  width: 150px;
 }
 
 input[type='number'] {
-  width: 80px;
+  width: 90px;
 }
 /* Buttons */
 button {
@@ -272,6 +272,11 @@ button {
   border-width: 1px;
   border-color: gainsboro;
   margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.profile-button {
+  width: 100px;
 }
 
 button:hover {

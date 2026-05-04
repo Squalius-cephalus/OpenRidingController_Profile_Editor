@@ -127,7 +127,7 @@ export const keycodes = {
     { label: 'Y-axis', value: 'Y' },
     { label: 'Scroll Wheel', value: 'WHEEL' },
   ],
-  Joystick: [
+  Analog: [
     { label: 'Left Stick X', value: 'LSX' },
     { label: 'Left Stick Y', value: 'LSY' },
     { label: 'Right Stick X', value: 'RSX' },

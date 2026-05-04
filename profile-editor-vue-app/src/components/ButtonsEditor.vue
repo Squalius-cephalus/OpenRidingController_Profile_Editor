@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import { getKeycodes } from '@/utils/useKeycodes'
 import type { Buttons, ButtonConfig, MacroStep, Mode } from '../types/profiles'
-import { ButtonOptions, ActionOptions, MacroOptions } from '../types/options'
-
+import { ButtonOptions, ActionOptions, MacroOptions, ButtonNames } from '../types/options'
+function getButtonLabel(value: string) {
+  return ButtonNames.find((o) => o.value === value)?.label ?? value
+}
 const buttons = defineModel<Buttons>()
 
 function setDefaultKeycode(step: MacroStep) {
@@ -18,7 +20,7 @@ function getAnalogPlaceholder(mode: string) {
       return 'Distance'
 
     default:
-      return 'Value'
+      return ''
   }
 }
 
@@ -28,10 +30,10 @@ function getValuePlaceholder(action: string) {
       return 'Seconds'
 
     case 'Multitap':
-      return 'Tap count'
+      return 'Amount'
 
     default:
-      return 'Value'
+      return ''
   }
 }
 function maxSteps() {
@@ -59,7 +61,7 @@ function removeStep(btn: ButtonConfig, si: number) {
   <div v-if="buttons">
     <h2>Actions and Buttons</h2>
     <div v-for="(btn, name) in buttons" :key="name">
-      <h3>{{ name }}</h3>
+      <h3>{{ getButtonLabel(name) }}</h3>
 
       <select v-model="btn.Mode">
         <option v-for="opt in ButtonOptions" :key="opt.value" :value="opt.value">

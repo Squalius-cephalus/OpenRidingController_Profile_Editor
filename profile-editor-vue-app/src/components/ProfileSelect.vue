@@ -36,7 +36,7 @@ function triggerLoad() {
     </option>
   </select>
   <div>
-    <button @click="triggerLoad">Load</button>
+    <button class="profile-button" @click="triggerLoad">Load Profiles</button>
     <input
       type="file"
       accept="application/json"
@@ -52,10 +52,26 @@ function triggerLoad() {
       style="display: none"
       ref="importProfile"
     />
-    <button @click="emit('save', $event)">Save JSON</button>
-    <button @click="emit('rename', $event)">Rename</button>
-    <button @click="emit('add', $event)">Add</button>
-    <button @click="emit('remove', $event)">remove</button>
-    <button @click="triggerImport">Import</button>
+    <button
+      style="color: white; background-color: green"
+      class="profile-button"
+      @click="emit('save', $event)"
+    >
+      Save
+    </button>
+    <button
+      style="color: white; background-color: red"
+      class="profile-button"
+      @click="emit('remove', $event)"
+    >
+      Delete
+    </button>
+    <div>
+      <button class="profile-button" @click="emit('rename', $event)">Rename</button>
+
+      <button class="profile-button" @click="emit('add', $event)">New</button>
+
+      <button class="profile-button" @click="triggerImport">Import</button>
+    </div>
   </div>
 </template>

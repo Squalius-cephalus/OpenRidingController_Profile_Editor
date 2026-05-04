@@ -1,4 +1,4 @@
-export type Mode = 'Keyboard' | 'MouseButton' | 'MouseMove' | 'Joystick' | 'Gamepad' | 'Macro'
+export type Mode = 'Keyboard' | 'MouseButton' | 'MouseMove' | 'Analog' | 'Gamepad' | 'Macro'
 
 export interface ButtonConfig {
   Mode: Mode
@@ -17,23 +17,25 @@ export interface MacroStep {
   AnalogValue: number
 }
 export interface Buttons {
-  'Add Speed': ButtonConfig
-  'Slow Down': ButtonConfig
+  StartMoving: ButtonConfig
+  AddSpeed: ButtonConfig
+  SlowDown: ButtonConfig
   Stop: ButtonConfig
   Reverse: ButtonConfig
-  'After Reverse': ButtonConfig
+  AfterReverse: ButtonConfig
   Jump: ButtonConfig
-  'Right Backward': ButtonConfig
+  RightBackwardSlow: ButtonConfig
+  RightBackwardFast: ButtonConfig
 
   Button1: ButtonConfig
   Button2: ButtonConfig
   Button3: ButtonConfig
   Button4: ButtonConfig
 
-  'Nunchuck C Button': ButtonConfig
-  'Nunchuck Z Button': ButtonConfig
-  'Nunchuck Left Flick': ButtonConfig
-  'Nunchuck Right Flick': ButtonConfig
+  NunchuckCButton: ButtonConfig
+  NunchuckZButton: ButtonConfig
+  NunchuckLeftFlick: ButtonConfig
+  NunchuckRightFlick: ButtonConfig
 }
 
 export interface ReinMode {
@@ -58,9 +60,6 @@ export interface Profile {
   Name: string
   Settings: {
     LEDColor: number[]
-    StirrupsForwardThreshold: number
-    StirrupsBackwardThreshold: number
-    StirrupsDeadZone: number
     ReinsThresholdSlowDown: number
     ReinsThresholdReinBack: number
     ReinsThresholdStop: number
@@ -73,11 +72,6 @@ export interface Profile {
 
 export interface Settings {
   LEDColor: number[]
-
-  StirrupsForwardThreshold: number
-  StirrupsBackwardThreshold: number
-  StirrupsDeadZone: number
-
   ReinsThresholdSlowDown: number
   ReinsThresholdReinBack: number
   ReinsThresholdStop: number

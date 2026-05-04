@@ -2,9 +2,6 @@
   "Name": "Keyboard Example",
   "Settings": {
     "LEDColor": [174, 50, 236],
-    "StirrupsForwardThreshold": 40,
-    "StirrupsBackwardThreshold": 40,
-    "StirrupsDeadZone": 40,
     "ReinsThresholdSlowDown": 30,
     "ReinsThresholdReinBack": 100,
     "ReinsThresholdStop": 390,
@@ -28,14 +25,21 @@
     "Axis": "LS"
   },
   "Buttons": {
-    "Add Speed": {
+    "StartMoving": {
       "Mode": "Keyboard",
       "Keycode": "A",
       "Action": "Toggle",
       "Value": 0,
       "AnalogValue": 0
     },
-    "Slow Down": {
+    "AddSpeed": {
+      "Mode": "Keyboard",
+      "Keycode": "A",
+      "Action": "Toggle",
+      "Value": 0,
+      "AnalogValue": 0
+    },
+    "SlowDown": {
       "Mode": "Keyboard",
       "Keycode": "S",
       "Action": "Tap",
@@ -56,7 +60,7 @@
       "Value": 0,
       "AnalogValue": 0
     },
-    "After Reverse": {
+    "AfterReverse": {
       "Mode": "Keyboard",
       "Keycode": "S",
       "Action": "Tap",
@@ -70,7 +74,14 @@
       "Value": 0,
       "AnalogValue": 0
     },
-    "Right Backward": {
+    "RightBackwardSlow": {
+      "Mode": "Keyboard",
+      "Keycode": "S",
+      "Action": "Multitap",
+      "Value": 0,
+      "AnalogValue": 0
+    },
+    "RightBackwardFast": {
       "Mode": "Keyboard",
       "Keycode": "S",
       "Action": "Multitap",
@@ -105,28 +116,28 @@
       "Value": 0,
       "AnalogValue": 0
     },
-    "Nunchuck C Button": {
+    "NunchuckCButton": {
       "Mode": "Mouse",
       "Keycode": "RIGHT_BUTTON",
       "Action": "Hold",
       "Value": 0.1,
       "AnalogValue": 0
     },
-    "Nunchuck Z Button": {
+    "NunchuckZButton": {
       "Mode": "Mouse",
       "Keycode": "LEFT_BUTTON",
       "Action": "Hold",
       "Value": 0.1,
       "AnalogValue": 0
     },
-    "Nunchuck Left Flick": {
+    "NunchuckLeftFlick": {
       "Mode": "Mouse",
       "Keycode": "LEFT_BUTTON",
       "Action": "Tap",
       "Value": 0,
       "AnalogValue": 0
     },
-    "Nunchuck Right Flick": {
+    "NunchuckRightFlick": {
       "Mode": "Mouse",
       "Keycode": "RIGHT_BUTTON",
       "Action": "Tap",
