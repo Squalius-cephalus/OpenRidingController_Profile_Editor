@@ -55,15 +55,15 @@ function renameProfile() {
   const profile = selectedProfile.value
   if (!profile) return
 
-  const newName = prompt('New profile name:', profile.Name)
+  const newName = prompt('New profile name:', profile.name)
 
   if (newName?.trim()) {
-    profile.Name = newName.trim()
+    profile.name = newName.trim()
   }
 }
 
 function nameExists(name: string) {
-  return profiles.value.some((p) => p.Name === name)
+  return profiles.value.some((p) => p.name === name)
 }
 
 function addProfile() {
@@ -77,9 +77,9 @@ function addProfile() {
 
   const newProfile = clone(templateProfile) as Profile
 
-  newProfile.Name = name.trim()
+  newProfile.name = name.trim()
 
-  newProfile.Settings.LEDColor = [getRandomInt(), getRandomInt(), getRandomInt()] as [
+  newProfile.settings.led_color = [getRandomInt(), getRandomInt(), getRandomInt()] as [
     number,
     number,
     number,
@@ -102,7 +102,7 @@ function removeProfile() {
 
   if (!profile) return
 
-  const confirmDelete = confirm(`Delete profile "${profile.Name}"?`)
+  const confirmDelete = confirm(`Delete profile "${profile.name}"?`)
 
   if (!confirmDelete) return
 
@@ -134,7 +134,7 @@ function importProfile(event: Event) {
         return
       }
 
-      const list = parsed.profiles.map((p: Profile, i: number) => `${i}: ${p.Name}`).join('\n')
+      const list = parsed.profiles.map((p: Profile, i: number) => `${i}: ${p.name}`).join('\n')
 
       const selected = prompt(`Select profile index to import:\n\n${list}`)
 
@@ -149,7 +149,7 @@ function importProfile(event: Event) {
 
       const profile = parsed.profiles[index] as Profile
 
-      if (nameExists(profile.Name)) {
+      if (nameExists(profile.name)) {
         alert('Profile name already exists!')
         return
       }
@@ -192,20 +192,20 @@ function clone<T>(obj: T): T {
         </div>
 
         <div class="section">
-          <SettingsEditor v-if="selectedProfile" v-model="selectedProfile.Settings" />
+          <SettingsEditor v-if="selectedProfile" v-model="selectedProfile.settings" />
         </div>
       </div>
 
       <div class="section-row">
         <div class="section">
-          <ReinMode v-if="selectedProfile" v-model="selectedProfile.ReinMode" />
+          <ReinMode v-if="selectedProfile" v-model="selectedProfile.rein_mode" />
         </div>
         <div class="section">
-          <NunchuckMode v-if="selectedProfile" v-model="selectedProfile.NunchuckMode" />
+          <NunchuckMode v-if="selectedProfile" v-model="selectedProfile.nunchuck_mode" />
         </div>
       </div>
       <div class="section">
-        <ButtonsEditor v-if="selectedProfile" v-model="selectedProfile.Buttons" />
+        <ButtonsEditor v-if="selectedProfile" v-model="selectedProfile.buttons" />
       </div>
     </div>
   </div>

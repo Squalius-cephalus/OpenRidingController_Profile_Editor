@@ -11,15 +11,15 @@ const nunchuckmode = defineModel<NunchuckMode>()
 
     <label>Emulation</label>
 
-    <select v-model="nunchuckmode.Mode">
+    <select v-model="nunchuckmode.mode">
       <option v-for="opt in NunchuckOptions" :key="opt.value" :value="opt.value">
         {{ opt.label }}
       </option>
     </select>
 
-    <div v-if="nunchuckmode.Mode === 'Joystick'">
+    <div v-if="nunchuckmode.mode === 'joystick'">
       <label>Joystick Axis</label>
-      <select v-model="nunchuckmode.Axis">
+      <select v-model="nunchuckmode.axis">
         <option v-for="opt in ReinModeOptionsAxis" :key="opt.value" :value="opt.value">
           {{ opt.label }}
         </option>
@@ -30,7 +30,7 @@ const nunchuckmode = defineModel<NunchuckMode>()
       <input
         type="number"
         step="0.1"
-        v-model.number="nunchuckmode.Sensitivity"
+        v-model.number="nunchuckmode.sensitivity"
         :min="0.1"
         :max="10"
       />

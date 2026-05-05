@@ -1,79 +1,77 @@
-export type Mode = 'Keyboard' | 'MouseButton' | 'MouseMove' | 'Analog' | 'Gamepad' | 'Macro'
+export type Mode = 'keyboard' | 'mouse_button' | 'mouse_move' | 'analog' | 'gamepad' | 'macro'
 
 export interface ButtonConfig {
-  Mode: Mode
-  Keycode: string
-  Action: string
-  Value: number
-  AnalogValue: number
-  Macro?: MacroStep[]
+  mode: Mode
+  keycode: string
+  action: string
+  value: number
+  analog_value: number
+  macro?: MacroStep[]
 }
 
 export interface MacroStep {
-  Mode: Mode
-  Keycode: string
-  Action: string
-  Value: number
-  AnalogValue: number
+  mode: Mode
+  keycode: string
+  action: string
+  value: number
+  analog_value: number
 }
 export interface Buttons {
-  StartMoving: ButtonConfig
-  AddSpeed: ButtonConfig
-  SlowDown: ButtonConfig
-  Stop: ButtonConfig
-  Reverse: ButtonConfig
-  AfterReverse: ButtonConfig
-  Jump: ButtonConfig
-  RightBackwardSlow: ButtonConfig
-  RightBackwardFast: ButtonConfig
+  start_moving: ButtonConfig
+  add_speed: ButtonConfig
+  slow_down: ButtonConfig
+  stop: ButtonConfig
+  reverse: ButtonConfig
+  after_reverse: ButtonConfig
+  jump: ButtonConfig
+  right_backward_slow: ButtonConfig
+  right_backward_fast: ButtonConfig
 
-  Button1: ButtonConfig
-  Button2: ButtonConfig
-  Button3: ButtonConfig
-  Button4: ButtonConfig
+  button1: ButtonConfig
+  button2: ButtonConfig
+  button3: ButtonConfig
+  button4: ButtonConfig
 
-  NunchuckCButton: ButtonConfig
-  NunchuckZButton: ButtonConfig
-  NunchuckLeftFlick: ButtonConfig
-  NunchuckRightFlick: ButtonConfig
+  nunchuck_c_button: ButtonConfig
+  nunchuck_z_button: ButtonConfig
+  nunchuck_flick_left: ButtonConfig
+  nunchuck_flick_right: ButtonConfig
 }
 
 export interface ReinMode {
-  Mode: string
-  Sensitivity?: number
-  Axis?: string
-  MouseBehaviour: string
-  MouseHold: boolean
-  MouseReturning: boolean
-  Threshold?: number
-  LeftKey: string
-  RightKey: string
+  mode: string
+  sensitivity?: number
+  axis?: string
+  mouse_hold: boolean
+  mouse_returning: boolean
+  threshold?: number
+  left_key: string
+  right_key: string
 }
 
 export interface NunchuckMode {
-  Mode: string
-  Sensitivity: number
-  Axis: string
+  mode: string
+  sensitivity: number
+  axis: string
 }
 
 export interface Profile {
-  Name: string
-  Settings: {
-    LEDColor: number[]
-    ReinsThresholdSlowDown: number
-    ReinsThresholdReinBack: number
-    ReinsThresholdStop: number
-    ReinsDeadZone: number
+  name: string
+  settings: {
+    led_color: number[]
+    reins_threshold_slow_down: number
+    reins_threshold_rein_back: number
+    reins_threshold_stop: number
+    reins_dead_zone: number
   }
-  ReinMode: ReinMode
-  NunchuckMode: NunchuckMode
-  Buttons: Buttons
+  rein_mode: ReinMode
+  nunchuck_mode: NunchuckMode
+  buttons: Buttons
 }
-
 export interface Settings {
-  LEDColor: number[]
-  ReinsThresholdSlowDown: number
-  ReinsThresholdReinBack: number
-  ReinsThresholdStop: number
-  ReinsDeadZone: number
+  led_color: number[]
+  reins_threshold_slow_down: number
+  reins_threshold_rein_back: number
+  reins_threshold_stop: number
+  reins_dead_zone: number
 }

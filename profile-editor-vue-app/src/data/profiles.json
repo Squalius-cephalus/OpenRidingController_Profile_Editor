@@ -1,126 +1,124 @@
 {
   "profiles": [
     {
-      "Name": "Keyboard Example",
-      "Settings": {
-        "LEDColor": [174, 50, 236],
-        "ReinsThresholdSlowDown": 30,
-        "ReinsThresholdReinBack": 100,
-        "ReinsThresholdStop": 390,
-        "ReinsDeadZone": 10
+      "name": "Keyboard Example",
+      "settings": {
+        "led_color": [174, 50, 236],
+        "reins_threshold_slow_down": 30,
+        "reins_threshold_rein_back": 100,
+        "reins_threshold_stop": 390,
+        "reins_dead_zone": 10
       },
-      "ReinMode": {
-        "Mode": "Keyboard",
-        "MouseBehaviour": "Normal",
-        "MouseButton": "LEFT_BUTTON",
-        "MouseHold": false,
-        "MouseReturning": false,
-        "LeftKey": "A",
-        "RightKey": "B",
-        "Sensitivity": 1,
-        "Threshold": 300,
-        "Axis": "LS"
+      "rein_mode": {
+        "mode": "mouse",
+        "sensitivity": 1,
+        "axis": "LS",
+        "mouse_hold": false,
+        "mouse_returning": false,
+        "threshold": 100,
+        "left_key": "A",
+        "right_key": "D"
       },
-      "NunchuckMode": {
-        "Mode": "Joystick",
-        "Sensitivity": 1,
-        "Axis": "LS"
+      "nunchuck_mode": {
+        "mode": "mouse",
+        "sensitivity": 1,
+        "axis": "LS"
       },
-      "Buttons": {
-        "StartMoving": {
-          "Mode": "Keyboard",
-          "Keycode": "A",
-          "Action": "Toggle",
-          "Value": 0,
-          "AnalogValue": 0
+      "buttons": {
+        "start_moving": {
+          "mode": "keyboard",
+          "keycode": "W",
+          "action": "toggle",
+          "value": 0,
+          "analog_value": 0
         },
-        "AddSpeed": {
-          "Mode": "Keyboard",
-          "Keycode": "A",
-          "Action": "Toggle"
+        "add_speed": {
+          "mode": "keyboard",
+          "keycode": "W",
+          "action": "toggle"
         },
-        "SlowDown": {
-          "Mode": "Keyboard",
-          "Keycode": "S",
-          "Action": "Tap",
-          "Value": 0,
-          "AnalogValue": 0
+        "slow_down": {
+          "mode": "keyboard",
+          "keycode": "S",
+          "action": "tap",
+          "value": 0,
+          "analog_value": 0
         },
-        "Stop": {
-          "Mode": "Keyboard",
-          "Keycode": "X",
-          "Action": "Tap"
+        "stop": {
+          "mode": "keyboard",
+          "keycode": "X",
+          "action": "tap"
         },
-        "Reverse": {
-          "Mode": "Keyboard",
-          "Keycode": "S",
-          "Action": "Tap",
-          "Value": 0,
-          "AnalogValue": 0
+        "reverse": {
+          "mode": "keyboard",
+          "keycode": "S",
+          "action": "tap",
+          "value": 0,
+          "analog_value": 0
         },
-        "AfterReverse": {
-          "Mode": "Keyboard",
-          "Keycode": "S",
-          "Action": "Tap"
+        "after_reverse": {
+          "mode": "keyboard",
+          "keycode": "S",
+          "action": "tap"
         },
-        "Jump": {
-          "Mode": "Keyboard",
-          "Keycode": "SPACE",
-          "Action": "Tap"
+        "jump": {
+          "mode": "keyboard",
+          "keycode": "SPACEBAR",
+          "action": "tap"
         },
-        "RightBackwardSlow": {
-          "Mode": "Keyboard",
-          "Keycode": "S",
-          "Action": "Multitap",
-          "Value": 4
+        "right_backward_slow": {
+          "mode": "keyboard",
+          "keycode": "SPACEBAR",
+          "action": "tap",
+          "value": 4
         },
-        "RightBackwardFast": {
-          "Mode": "Keyboard",
-          "Keycode": "W",
-          "Action": "Multitap",
-          "Value": 4
+        "right_backward_fast": {
+          "mode": "keyboard",
+          "keycode": "SPACEBAR",
+          "action": "tap",
+          "value": 4
         },
-        "Button1": {
-          "Mode": "Keyboard",
-          "Keycode": "ESCAPE",
-          "Action": "Tap"
+        "button1": {
+          "mode": "keyboard",
+          "keycode": "ESCAPE",
+          "action": "tap"
         },
-        "Button2": {
-          "Mode": "Keyboard",
-          "Keycode": "ENTER",
-          "Action": "Tap"
+        "button2": {
+          "mode": "keyboard",
+          "keycode": "ENTER",
+          "action": "tap"
         },
-        "Button3": {
-          "Mode": "Keyboard",
-          "Keycode": "UP_ARROW",
-          "Action": "Tap"
+        "button3": {
+          "mode": "keyboard",
+          "keycode": "UP_ARROW",
+          "action": "tap"
         },
-        "Button4": {
-          "Mode": "Keyboard",
-          "Keycode": "DOWN_ARROW",
-          "Action": "Tap"
+        "button4": {
+          "mode": "keyboard",
+          "keycode": "DOWN_ARROW",
+          "action": "tap"
         },
-        "NunchuckCButton": {
-          "Mode": "MouseButton",
-          "Keycode": "RIGHT_BUTTON",
-          "Action": "Hold",
-          "Value": 0.1
+        "nunchuck_c_button": {
+          "mode": "mouse_button",
+          "keycode": "RIGHT_BUTTON",
+          "action": "hold",
+          "value": 0.1
         },
-        "NunchuckZButton": {
-          "Mode": "MouseButton",
-          "Keycode": "LEFT_BUTTON",
-          "Action": "Hold",
-          "Value": 0.1
+        "nunchuck_z_button": {
+          "mode": "mouse_button",
+          "keycode": "LEFT_BUTTON",
+          "action": "hold",
+          "value": 0.1
         },
-        "NunchuckLeftFlick": {
-          "Mode": "MouseButton",
-          "Keycode": "LEFT_BUTTON",
-          "Action": "Tap"
+        "nunchuck_flick_left": {
+          "mode": "mouse_button",
+          "keycode": "LEFT_BUTTON",
+          "action": "tap"
         },
-        "NunchuckRightFlick": {
-          "Mode": "MouseButton",
-          "Keycode": "RIGHT_BUTTON",
-          "Action": "Tap"
+        "nunchuck_flick_right": {
+          "mode": "mouse_button",
+          "keycode": "RIGHT_BUTTON",
+          "action": "tap"
         }
       }
     }

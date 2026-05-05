@@ -13,54 +13,54 @@ const reinmode = defineModel<ReinMode>()
 
     <label>Emulation</label>
 
-    <select v-model="reinmode.Mode">
+    <select v-model="reinmode.mode">
       <option v-for="opt in ReinModeOptions" :key="opt.value" :value="opt.value">
         {{ opt.label }}
       </option>
     </select>
 
-    <div v-if="reinmode.Mode === 'Joystick'">
+    <div v-if="reinmode.mode === 'joystick'">
       <label>Joystick Axis</label>
-      <select v-model="reinmode.Axis">
+      <select v-model="reinmode.axis">
         <option v-for="opt in ReinModeOptionsAxis" :key="opt.value" :value="opt.value">
           {{ opt.label }}
         </option>
       </select>
     </div>
-    <div v-if="reinmode.Mode === 'Joystick' || reinmode.Mode === 'Mouse'">
+    <div v-if="reinmode.mode === 'joystick' || reinmode.mode === 'mouse'">
       <label>Sensitivity</label>
-      <input type="number" step="0.1" v-model.number="reinmode.Sensitivity" :min="0.1" :max="10" />
+      <input type="number" step="0.1" v-model.number="reinmode.sensitivity" :min="0.1" :max="10" />
     </div>
 
-    <div v-if="reinmode.Mode === 'Mouse'">
+    <div v-if="reinmode.mode === 'mouse'">
       <div>
         <label> Hold Mouse</label>
-        <input type="checkbox" v-model="reinmode['MouseHold']" />
+        <input type="checkbox" v-model="reinmode['mouse_hold']" />
 
         <div>
           <label> Return to center</label>
-          <input type="checkbox" v-model="reinmode['MouseReturning']" />
+          <input type="checkbox" v-model="reinmode['mouse_returning']" />
         </div>
       </div>
     </div>
 
-    <div v-if="reinmode.Mode === 'Keyboard'">
+    <div v-if="reinmode.mode === 'keyboard'">
       <div>
         <label>Threshold</label>
-        <input type="number" step="0.1" v-model.number="reinmode.Threshold" />
+        <input type="number" step="0.1" v-model.number="reinmode.threshold" />
       </div>
       <div>
         <label>Left</label>
 
-        <select v-model="reinmode.LeftKey">
-          <option v-for="k in getKeycodes(reinmode.Mode)" :key="k.value" :value="k.value">
+        <select v-model="reinmode.left_key">
+          <option v-for="k in getKeycodes(reinmode.mode)" :key="k.value" :value="k.value">
             {{ k.label }}
           </option>
         </select>
       </div>
       <label>Right</label>
-      <select v-model="reinmode.RightKey">
-        <option v-for="k in getKeycodes(reinmode.Mode)" :key="k.value" :value="k.value">
+      <select v-model="reinmode.right_key">
+        <option v-for="k in getKeycodes(reinmode.mode)" :key="k.value" :value="k.value">
           {{ k.label }}
         </option>
       </select>

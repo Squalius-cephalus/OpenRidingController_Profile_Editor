@@ -1,12 +1,12 @@
 export const ReinModeOptions = [
-  { label: 'Mouse', value: 'Mouse' },
-  { label: 'Analog', value: 'Joystick' },
-  { label: 'Keyboard', value: 'Keyboard' },
+  { label: 'Mouse', value: 'mouse' },
+  { label: 'Analog', value: 'joystick' },
+  { label: 'Keyboard', value: 'keyboard' },
 ] as const
 
 export const NunchuckOptions = [
-  { label: 'Mouse', value: 'Mouse' },
-  { label: 'Analog', value: 'Joystick' },
+  { label: 'Mouse', value: 'mouse' },
+  { label: 'Analog', value: 'joystick' },
 ] as const
 
 export const ReinModeOptionsAxis = [
@@ -15,47 +15,47 @@ export const ReinModeOptionsAxis = [
 ] as const
 
 export const ButtonOptions = [
-  { label: 'Mouse Move', value: 'MouseMove' },
-  { label: 'Mouse Button', value: 'MouseButton' },
-  { label: 'Analog', value: 'Analog' },
-  { label: 'Keyboard', value: 'Keyboard' },
-  { label: 'Gamepad', value: 'Gamepad' },
-  { label: 'Macro', value: 'Macro' },
+  { label: 'Mouse Move', value: 'mouse_move' },
+  { label: 'Mouse Button', value: 'mouse_button' },
+  { label: 'Analog', value: 'analog' },
+  { label: 'Keyboard', value: 'keyboard' },
+  { label: 'Gamepad', value: 'gamepad' },
+  { label: 'Macro', value: 'macro' },
 ] as const
 
 export const MacroOptions = [
-  { label: 'Mouse Move', value: 'MouseMove' },
+  { label: 'Mouse Move', value: 'mouse_move' },
   { label: 'Mouse Button', value: 'MouseButton' },
-  { label: 'Analog', value: 'Analog' },
-  { label: 'Keyboard', value: 'Keyboard' },
-  { label: 'Gamepad', value: 'Gamepad' },
+  { label: 'Analog', value: 'analog' },
+  { label: 'Keyboard', value: 'keyboard' },
+  { label: 'Gamepad', value: 'gamepad' },
 ] as const
 
 export const ActionOptions = [
-  { label: 'Tap', value: 'Tap' },
-  { label: 'Hold', value: 'Hold' },
-  { label: 'Toggle', value: 'Toggle' },
-  { label: 'Toggle On', value: 'ToggleOn' },
-  { label: 'Toggle Off', value: 'ToggleOff' },
-  { label: 'Multitap', value: 'Multitap' },
+  { label: 'Tap', value: 'tap' },
+  { label: 'Hold', value: 'hold' },
+  { label: 'Toggle', value: 'toggle' },
+  { label: 'Toggle On', value: 'toggle_on' },
+  { label: 'Toggle Off', value: 'toggle_off' },
+  { label: 'Multitap', value: 'multitap' },
 ] as const
 
 export const ButtonNames = [
-  { label: 'Start Moving', value: 'StartMoving' },
-  { label: 'Add Speed', value: 'AddSpeed' },
-  { label: 'Slow Down', value: 'SlowDown' },
-  { label: 'Stop', value: 'Stop' },
-  { label: 'Reverse', value: 'Reverse' },
-  { label: 'After Reverse', value: 'AfterReverse' },
-  { label: 'Jump', value: 'Jump' },
-  { label: 'Right Stirrup Backward Slow', value: 'Right Backward Slow' },
-  { label: 'Right Stirrup Backward Fast', value: 'Right Backward Fast' },
-  { label: 'Button 1', value: 'Button1' },
-  { label: 'Button 2', value: 'Button2' },
-  { label: 'Button 3', value: 'Button3' },
-  { label: 'Button 4', value: 'Button4' },
-  { label: 'Nunchuck C Button', value: 'NunchuckCButton' },
-  { label: 'Nunchuck Z Button', value: 'NunchuckZButton' },
-  { label: 'Nunchuck Left Flick', value: 'NunchuckLeftFlick' },
-  { label: 'Nunchuck Right Flick', value: 'NunchuckRightFlick' },
+  { label: 'Start Moving', value: 'start_moving' },
+  { label: 'Add Speed', value: 'add_speed' },
+  { label: 'Slow Down', value: 'slow_down' },
+  { label: 'Stop', value: 'stop' },
+  { label: 'Reverse', value: 'reverse' },
+  { label: 'After Reverse', value: 'after_reverse' },
+  { label: 'Jump', value: 'jump' },
+  { label: 'Right Stirrup Backward Slow', value: 'right_backward_slow' },
+  { label: 'Right Stirrup Backward Fast', value: 'right_backward_fast' },
+  { label: 'Button 1', value: 'button1' },
+  { label: 'Button 2', value: 'button2' },
+  { label: 'Button 3', value: 'button3' },
+  { label: 'Button 4', value: 'button4' },
+  { label: 'Nunchuck C Button', value: 'nunchuck_c_button' },
+  { label: 'Nunchuck Z Button', value: 'nunchuck_z_button' },
+  { label: 'Nunchuck Left Flick', value: 'nunchuck_flick_left' },
+  { label: 'Nunchuck Right Flick', value: 'nunchuck_flick_right' },
 ] as const

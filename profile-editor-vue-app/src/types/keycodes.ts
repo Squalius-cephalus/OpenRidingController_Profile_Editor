@@ -1,6 +1,6 @@
 export const keycodes = {
   // Based on Adafruit HID keycode.py https://github.com/adafruit/Adafruit_CircuitPython_HID/blob/main/adafruit_hid/keycode.py
-  Keyboard: [
+  keyboard: [
     { label: 'A', value: 'A' },
     { label: 'B', value: 'B' },
     { label: 'C', value: 'C' },
@@ -116,18 +116,18 @@ export const keycodes = {
     { label: 'Right Win/Command', value: 'RIGHT_GUI' },
   ],
 
-  MouseButton: [
+  mouse_button: [
     { label: 'Left Click', value: 'LEFT_BUTTON' },
     { label: 'Right Click', value: 'RIGHT_BUTTON' },
     { label: 'Middle Click', value: 'MIDDLE_BUTTON' },
   ],
 
-  MouseMove: [
+  mouse_move: [
     { label: 'X-axis', value: 'X' },
     { label: 'Y-axis', value: 'Y' },
     { label: 'Scroll Wheel', value: 'WHEEL' },
   ],
-  Analog: [
+  analog: [
     { label: 'Left Stick X', value: 'LSX' },
     { label: 'Left Stick Y', value: 'LSY' },
     { label: 'Right Stick X', value: 'RSX' },
@@ -135,7 +135,7 @@ export const keycodes = {
     { label: 'Left Trigger', value: 'LT' },
     { label: 'Right Trigger', value: 'RT' },
   ],
-  Gamepad: [
+  gamepad: [
     { label: 'A', value: 'A' },
     { label: 'B', value: 'B' },
     { label: 'X', value: 'X' },
@@ -154,5 +154,5 @@ export const keycodes = {
     { label: 'Share', value: 'SHARE' },
   ],
 
-  Macro: [],
+  macro: [],
 }

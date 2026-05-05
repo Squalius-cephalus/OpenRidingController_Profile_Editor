@@ -27,12 +27,13 @@ function triggerLoad() {
 </script>
 
 <template>
+  <h2>Loaded Profile</h2>
   <select
     :value="selectedIndex"
     @change="emit('update:selectedIndex', Number(($event.target as HTMLSelectElement).value))"
   >
     <option v-for="(profile, index) in profiles" :key="index" :value="index">
-      {{ profile.Name }}
+      {{ profile.name }}
     </option>
   </select>
   <div>
