@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { getKeycodes } from '@/utils/useKeycodes'
+import { getKeycodes, clamp } from '@/utils/useKeycodes'
 import type { Buttons, ButtonConfig, MacroStep, Mode } from '../types/profiles'
 import { ButtonOptions, ActionOptions, MacroOptions, ButtonNames } from '../types/options'
 function getButtonLabel(value: string) {
@@ -68,7 +68,7 @@ function removeStep(btn: ButtonConfig, si: number) {
 
 <template>
   <div v-if="buttons">
-    <h2>actions and Buttons</h2>
+    <h2>Actions and Buttons</h2>
     <div v-for="(btn, name) in buttons" :key="name">
       <h3>{{ getButtonLabel(name) }}</h3>
 
@@ -98,19 +98,19 @@ function removeStep(btn: ButtonConfig, si: number) {
         v-model.number="btn.value"
         :placeholder="getValuePlaceholder(btn.action)"
         :disabled="!['hold', 'multitap'].includes(btn.action)"
-        :min="0"
-        :max="10"
+        @input="btn.value = clamp(btn.value, 0, 10)"
       />
 
       <input
+        type="range"
         v-if="btn.mode !== 'macro'"
-        type="number"
-        step="1"
-        v-model.number="btn['analog_value']"
+        v-model.number="btn.analog_value"
+        :disabled="!['mouse_move', 'analog'].includes(btn.mode)"
         :placeholder="getAnalogPlaceholder(btn.mode)"
         :min="-127"
         :max="127"
-        :disabled="!['analog', 'mouse_move'].includes(btn.mode)"
+        @input="btn.analog_value = clamp(btn.analog_value, -127, 127)"
+        @dblclick="btn.analog_value = 0"
       />
 
       <div v-if="btn.mode === 'macro'">
@@ -136,19 +136,22 @@ function removeStep(btn: ButtonConfig, si: number) {
             type="number"
             v-model.number="step.value"
             :placeholder="getValuePlaceholder(step.action)"
-            :disabled="!['Hold', 'Multitap'].includes(step.action)"
+            :disabled="!['hold', 'multitap'].includes(step.action)"
             :step="maxSteps(step.action)"
             :min="0"
             :max="10"
+            @input="step.value = clamp(step.value, 0, 10)"
           />
 
           <input
-            type="number"
+            type="range"
             v-model.number="step['analog_value']"
             :disabled="!['mouse_move', 'analog'].includes(step.mode)"
             :placeholder="getAnalogPlaceholder(step.mode)"
             :min="-127"
             :max="127"
+            @input="step.analog_value = clamp(step.analog_value, -127, 127)"
+            @dblclick="step.analog_value = 0"
           />
 
           <button @click="removeStep(btn, si)" style="background-color: red; color: white">

@@ -1,15 +1,20 @@
 export const ReinModeOptions = [
   { label: 'Mouse', value: 'mouse' },
-  { label: 'Analog', value: 'joystick' },
+  { label: 'Joystick', value: 'analog' },
   { label: 'Keyboard', value: 'keyboard' },
 ] as const
 
 export const NunchuckOptions = [
   { label: 'Mouse', value: 'mouse' },
-  { label: 'Analog', value: 'joystick' },
+  { label: 'Joystick', value: 'analog' },
 ] as const
 
 export const ReinModeOptionsAxis = [
+  { label: 'Left Joystick', value: 'LSX' },
+  { label: 'Right Joystick', value: 'RSX' },
+] as const
+
+export const NunchuckOptionsAxis = [
   { label: 'Left Joystick', value: 'LS' },
   { label: 'Right Joystick', value: 'RS' },
 ] as const

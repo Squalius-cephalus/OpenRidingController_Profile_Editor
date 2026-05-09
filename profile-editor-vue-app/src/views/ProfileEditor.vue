@@ -175,7 +175,7 @@ function clone<T>(obj: T): T {
 <template>
   <div class="editor">
     <div>
-      <h1>Profile Editor</h1>
+      <h1>Riding Controller Profile Editor</h1>
       <div class="section-row">
         <div class="section">
           <ProfileSelect
@@ -261,6 +261,9 @@ select {
   width: 150px;
 }
 
+input[type='range'] {
+  width: 90px;
+}
 input[type='number'] {
   width: 90px;
 }

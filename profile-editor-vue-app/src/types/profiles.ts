@@ -40,11 +40,12 @@ export interface Buttons {
 
 export interface ReinMode {
   mode: string
-  sensitivity?: number
-  axis?: string
+  sensitivity: number
+  axis: string
   mouse_hold: boolean
   mouse_returning: boolean
-  threshold?: number
+  mouse_max_distance: number
+  threshold: number
   left_key: string
   right_key: string
 }
@@ -57,13 +58,7 @@ export interface NunchuckMode {
 
 export interface Profile {
   name: string
-  settings: {
-    led_color: number[]
-    reins_threshold_slow_down: number
-    reins_threshold_rein_back: number
-    reins_threshold_stop: number
-    reins_dead_zone: number
-  }
+  settings: Settings
   rein_mode: ReinMode
   nunchuck_mode: NunchuckMode
   buttons: Buttons
@@ -73,5 +68,6 @@ export interface Settings {
   reins_threshold_slow_down: number
   reins_threshold_rein_back: number
   reins_threshold_stop: number
-  reins_dead_zone: number
+  stirrup_speed_threshold_fast: number
+  stirrup_speed_threshold_slow: number
 }

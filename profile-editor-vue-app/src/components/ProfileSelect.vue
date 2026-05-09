@@ -36,6 +36,7 @@ function triggerLoad() {
       {{ profile.name }}
     </option>
   </select>
+  <div><br /></div>
   <div>
     <button class="profile-button" @click="triggerLoad">Load Profiles</button>
     <input

@@ -7,7 +7,8 @@
         "reins_threshold_slow_down": 30,
         "reins_threshold_rein_back": 100,
         "reins_threshold_stop": 390,
-        "reins_dead_zone": 10
+        "stirrup_speed_threshold_fast": 30,
+        "stirrup_speed_threshold_slow": 20
       },
       "rein_mode": {
         "mode": "mouse",
@@ -15,6 +16,7 @@
         "axis": "LS",
         "mouse_hold": false,
         "mouse_returning": false,
+        "mouse_max_distance": 1000,
         "threshold": 100,
         "left_key": "A",
         "right_key": "D"

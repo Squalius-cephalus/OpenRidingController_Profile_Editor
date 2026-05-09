@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 import type { Settings } from '../types/profiles'
+import { clamp } from '@/utils/useKeycodes'
 
 const rgbToHex = (rgb: number[]) => {
   return '#' + rgb.map((v) => v.toString(16).padStart(2, '0')).join('')
@@ -41,16 +42,57 @@ const visible = ref(false)
       <div>
         <h3>Reins</h3>
         <label> Threshold Slow Down</label>
-        <input type="number" v-model.number="settings.reins_threshold_slow_down" />
+        <input
+          type="number"
+          v-model.number="settings.reins_threshold_slow_down"
+          @input="
+            settings.reins_threshold_slow_down = clamp(settings.reins_threshold_slow_down, 10, 100)
+          "
+        />
 
         <label> Threshold Rein Back </label>
-        <input type="number" v-model.number="settings.reins_threshold_rein_back" />
+        <input
+          type="number"
+          v-model.number="settings.reins_threshold_rein_back"
+          @input="
+            settings.reins_threshold_rein_back = clamp(settings.reins_threshold_rein_back, 100, 511)
+          "
+        />
 
         <label> Threshold Stop</label>
-        <input type="number" v-model.number="settings.reins_threshold_stop" />
+        <input
+          type="number"
+          v-model.number="settings.reins_threshold_stop"
+          @input="settings.reins_threshold_stop = clamp(settings.reins_threshold_stop, 300, 511)"
+        />
+      </div>
+      <div>
+        <h3>Stirrups</h3>
+        <label> Threshold Fast</label>
+        <input
+          type="number"
+          v-model.number="settings.stirrup_speed_threshold_fast"
+          @input="
+            settings.stirrup_speed_threshold_fast = clamp(
+              settings.stirrup_speed_threshold_fast,
+              10,
+              50,
+            )
+          "
+        />
 
-        <label> Dead Zone </label>
-        <input type="number" v-model.number="settings.reins_dead_zone" />
+        <label> Threshold Slow</label>
+        <input
+          type="number"
+          v-model.number="settings.stirrup_speed_threshold_slow"
+          @input="
+            settings.stirrup_speed_threshold_slow = clamp(
+              settings.stirrup_speed_threshold_slow,
+              10,
+              50,
+            )
+          "
+        />
       </div>
     </div>
   </div>
