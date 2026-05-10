@@ -14,15 +14,15 @@
         "stirrup_dead_zone": 20
       },
       "rein_mode": {
-        "mode": "mouse",
-        "sensitivity": 1,
+        "mode": "keyboard",
+        "sensitivity": 0.1,
         "axis": "LSX",
-        "mouse_hold": true,
-        "mouse_returning": true,
-        "mouse_max_distance": 2048,
-        "keyboard_threshold": 200,
-        "left_key": "A",
-        "right_key": "D"
+        "mouse_hold": false,
+        "mouse_returning": false,
+        "mouse_max_distance": 1024,
+        "keyboard_threshold": 250,
+        "left_key": "LEFT_ARROW",
+        "right_key": "RIGHT_ARROW"
       },
       "nunchuck_mode": {
         "mode": "mouse",
@@ -35,12 +35,14 @@
           "keycode": "W",
           "action": "tap",
           "value": 0,
-          "analog_value": 1
+          "analog_value": 0
         },
         "add_speed": {
           "mode": "keyboard",
           "keycode": "W",
-          "action": "tap"
+          "action": "tap",
+          "value": 0,
+          "analog_value": 0
         },
         "slow_down": {
           "mode": "keyboard",
@@ -61,7 +63,9 @@
         "stop": {
           "mode": "keyboard",
           "keycode": "X",
-          "action": "tap"
+          "action": "tap",
+          "value": 0,
+          "analog_value": 0
         },
         "reverse": {
           "mode": "keyboard",
@@ -73,40 +77,51 @@
         "after_reverse": {
           "mode": "keyboard",
           "keycode": "W",
-          "action": "tap"
+          "action": "tap",
+          "value": 0,
+          "analog_value": 0
         },
         "jump": {
           "mode": "keyboard",
           "keycode": "SPACEBAR",
-          "action": "tap"
+          "action": "tap",
+          "value": 0,
+          "analog_value": 0
         },
         "right_backward_slow": {
           "mode": "keyboard",
           "keycode": "SPACEBAR",
           "action": "tap",
-          "value": 4
+          "value": 0,
+          "analog_value": 0
         },
         "right_backward_fast": {
           "mode": "keyboard",
           "keycode": "SPACEBAR",
           "action": "tap",
-          "value": 4
+          "value": 0,
+          "analog_value": 0
         },
         "button1": {
           "mode": "keyboard",
           "keycode": "ESCAPE",
-          "action": "tap"
+          "action": "tap",
+          "value": 0,
+          "analog_value": 0
         },
         "button2": {
           "mode": "keyboard",
           "keycode": "ENTER",
-          "action": "multitap",
-          "value": 10
+          "action": "tap",
+          "value": 0,
+          "analog_value": 0
         },
         "button3": {
           "mode": "keyboard",
           "keycode": "M",
           "action": "tap",
+          "value": 0,
+          "analog_value": 0,
           "macro": [
             {
               "mode": "analog",
@@ -127,29 +142,37 @@
         "button4": {
           "mode": "keyboard",
           "keycode": "DOWN_ARROW",
-          "action": "tap"
+          "action": "tap",
+          "value": 0,
+          "analog_value": 0
         },
         "nunchuck_c_button": {
           "mode": "mouse_button",
           "keycode": "RIGHT_BUTTON",
           "action": "hold",
-          "value": 0.1
+          "value": 0.1,
+          "analog_value": 0
         },
         "nunchuck_z_button": {
           "mode": "mouse_button",
           "keycode": "LEFT_BUTTON",
           "action": "hold",
-          "value": 0.1
+          "value": 0.1,
+          "analog_value": 0
         },
         "nunchuck_flick_left": {
           "mode": "mouse_button",
           "keycode": "LEFT_BUTTON",
-          "action": "tap"
+          "action": "tap",
+          "value": 0,
+          "analog_value": 0
         },
         "nunchuck_flick_right": {
           "mode": "mouse_button",
           "keycode": "RIGHT_BUTTON",
-          "action": "tap"
+          "action": "tap",
+          "value": 0,
+          "analog_value": 0
         }
       }
     },
