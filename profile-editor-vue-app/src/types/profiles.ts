@@ -45,7 +45,7 @@ export interface ReinMode {
   mouse_hold: boolean
   mouse_returning: boolean
   mouse_max_distance: number
-  threshold: number
+  keyboard_threshold: number
   left_key: string
   right_key: string
 }
@@ -70,4 +70,7 @@ export interface Settings {
   reins_threshold_stop: number
   stirrup_speed_threshold_fast: number
   stirrup_speed_threshold_slow: number
+  stirrup_forward_threshold: number
+  stirrup_backward_threshold: number
+  stirrup_dead_zone: number
 }

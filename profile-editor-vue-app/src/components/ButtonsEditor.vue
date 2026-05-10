@@ -24,7 +24,11 @@ function getAnalogPlaceholder(mode: string) {
   }
 }
 
-function getValuePlaceholder(action: string) {
+function getValuePlaceholder(action: string, mode: string) {
+  if (mode == 'wait') {
+    return 'Seconds'
+  }
+
   switch (action) {
     case 'hold':
       return 'Seconds'
@@ -36,7 +40,10 @@ function getValuePlaceholder(action: string) {
       return ''
   }
 }
-function maxSteps(action: string) {
+function maxSteps(action: string, mode: string) {
+  if (mode == 'wait') {
+    return 0.1
+  }
   switch (action) {
     case 'hold':
       return 0.1
@@ -94,9 +101,9 @@ function removeStep(btn: ButtonConfig, si: number) {
       <input
         v-if="btn.mode !== 'macro'"
         type="number"
-        :step="maxSteps(btn.action)"
+        :step="maxSteps(btn.action, btn.mode)"
         v-model.number="btn.value"
-        :placeholder="getValuePlaceholder(btn.action)"
+        :placeholder="getValuePlaceholder(btn.action, btn.mode)"
         :disabled="!['hold', 'multitap'].includes(btn.action)"
         @input="btn.value = clamp(btn.value, 0, 10)"
       />
@@ -121,12 +128,12 @@ function removeStep(btn: ButtonConfig, si: number) {
             </option>
           </select>
 
-          <select v-model="step.keycode">
+          <select v-model="step.keycode" :disabled="['wait'].includes(step.mode)">
             <option v-for="k in getKeycodes(step.mode)" :key="k.value" :value="k.value">
               {{ k.label }}
             </option>
           </select>
-          <select v-model="step.action">
+          <select v-model="step.action" :disabled="['wait'].includes(step.mode)">
             <option v-for="opt in ActionOptions" :key="opt.value" :value="opt.value">
               {{ opt.label }}
             </option>
@@ -135,9 +142,9 @@ function removeStep(btn: ButtonConfig, si: number) {
           <input
             type="number"
             v-model.number="step.value"
-            :placeholder="getValuePlaceholder(step.action)"
-            :disabled="!['hold', 'multitap'].includes(step.action)"
-            :step="maxSteps(step.action)"
+            :placeholder="getValuePlaceholder(step.action, step.mode)"
+            :disabled="!['hold', 'multitap'].includes(step.action) && !['wait'].includes(step.mode)"
+            :step="maxSteps(step.action, step.mode)"
             :min="0"
             :max="10"
             @input="step.value = clamp(step.value, 0, 10)"

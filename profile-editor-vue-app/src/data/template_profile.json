@@ -1,48 +1,60 @@
 {
-  "name": "keyboard Example",
+  "name": "Template",
   "settings": {
     "led_color": [174, 50, 236],
     "reins_threshold_slow_down": 30,
     "reins_threshold_rein_back": 100,
     "reins_threshold_stop": 390,
-    "stirrup_speed_threshold_fast": 30,
-    "stirrup_speed_threshold_slow": 20
+    "stirrup_speed_threshold_fast": 0.11,
+    "stirrup_speed_threshold_slow": 0.3,
+    "stirrup_forward_threshold": 120,
+    "stirrup_backward_threshold": -100,
+    "stirrup_dead_zone": 20
   },
   "rein_mode": {
     "mode": "keyboard",
-    "sensitivity": 1,
-    "axis": "LS",
+    "sensitivity": 0.1,
+    "axis": "LSX",
     "mouse_hold": false,
     "mouse_returning": false,
-    "mouse_max_distance": 1000,
-    "threshold": 100,
-    "left_key": "A",
-    "right_key": "D"
+    "mouse_max_distance": 1024,
+    "keyboard_threshold": 250,
+    "left_key": "LEFT_ARROW",
+    "right_key": "RIGHT_ARROW"
   },
   "nunchuck_mode": {
-    "mode": "joystick",
+    "mode": "mouse",
     "sensitivity": 1,
     "axis": "LS"
   },
   "buttons": {
     "start_moving": {
       "mode": "keyboard",
-      "keycode": "A",
-      "action": "toggle",
+      "keycode": "W",
+      "action": "tap",
       "value": 0,
-      "analog_value": 0
+      "analog_value": 1
     },
     "add_speed": {
       "mode": "keyboard",
-      "keycode": "A",
-      "action": "toggle"
+      "keycode": "W",
+      "action": "tap"
     },
     "slow_down": {
       "mode": "keyboard",
       "keycode": "S",
       "action": "tap",
       "value": 0,
-      "analog_value": 0
+      "analog_value": 0,
+      "macro": [
+        {
+          "mode": "analog",
+          "keycode": "LSX",
+          "action": "tap",
+          "value": 0,
+          "analog_value": 1
+        }
+      ]
     },
     "stop": {
       "mode": "keyboard",
@@ -58,24 +70,24 @@
     },
     "after_reverse": {
       "mode": "keyboard",
-      "keycode": "S",
+      "keycode": "W",
       "action": "tap"
     },
     "jump": {
       "mode": "keyboard",
-      "keycode": "SPACE",
+      "keycode": "SPACEBAR",
       "action": "tap"
     },
     "right_backward_slow": {
       "mode": "keyboard",
-      "keycode": "S",
-      "action": "multitap",
+      "keycode": "SPACEBAR",
+      "action": "tap",
       "value": 4
     },
     "right_backward_fast": {
       "mode": "keyboard",
-      "keycode": "W",
-      "action": "multitap",
+      "keycode": "SPACEBAR",
+      "action": "tap",
       "value": 4
     },
     "button1": {
@@ -86,12 +98,29 @@
     "button2": {
       "mode": "keyboard",
       "keycode": "ENTER",
-      "action": "tap"
+      "action": "tap",
+      "value": 0
     },
     "button3": {
       "mode": "keyboard",
-      "keycode": "UP_ARROW",
-      "action": "tap"
+      "keycode": "M",
+      "action": "tap",
+      "macro": [
+        {
+          "mode": "analog",
+          "keycode": "LSX",
+          "action": "multitap",
+          "value": 7,
+          "analog_value": 124
+        },
+        {
+          "mode": "keyboard",
+          "keycode": "A",
+          "action": "tap",
+          "value": 0,
+          "analog_value": 0
+        }
+      ]
     },
     "button4": {
       "mode": "keyboard",
@@ -101,13 +130,13 @@
     "nunchuck_c_button": {
       "mode": "mouse_button",
       "keycode": "RIGHT_BUTTON",
-      "action": "Hold",
+      "action": "hold",
       "value": 0.1
     },
     "nunchuck_z_button": {
       "mode": "mouse_button",
       "keycode": "LEFT_BUTTON",
-      "action": "Hold",
+      "action": "hold",
       "value": 0.1
     },
     "nunchuck_flick_left": {

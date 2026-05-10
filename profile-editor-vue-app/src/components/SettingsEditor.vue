@@ -45,7 +45,7 @@ const visible = ref(false)
         <input
           type="number"
           v-model.number="settings.reins_threshold_slow_down"
-          @input="
+          @blur="
             settings.reins_threshold_slow_down = clamp(settings.reins_threshold_slow_down, 10, 100)
           "
         />
@@ -54,7 +54,7 @@ const visible = ref(false)
         <input
           type="number"
           v-model.number="settings.reins_threshold_rein_back"
-          @input="
+          @blur="
             settings.reins_threshold_rein_back = clamp(settings.reins_threshold_rein_back, 100, 511)
           "
         />
@@ -63,7 +63,7 @@ const visible = ref(false)
         <input
           type="number"
           v-model.number="settings.reins_threshold_stop"
-          @input="settings.reins_threshold_stop = clamp(settings.reins_threshold_stop, 300, 511)"
+          @blur="settings.reins_threshold_stop = clamp(settings.reins_threshold_stop, 300, 511)"
         />
       </div>
       <div>
@@ -72,7 +72,7 @@ const visible = ref(false)
         <input
           type="number"
           v-model.number="settings.stirrup_speed_threshold_fast"
-          @input="
+          @blur="
             settings.stirrup_speed_threshold_fast = clamp(
               settings.stirrup_speed_threshold_fast,
               10,
@@ -85,13 +85,39 @@ const visible = ref(false)
         <input
           type="number"
           v-model.number="settings.stirrup_speed_threshold_slow"
-          @input="
+          @blur="
             settings.stirrup_speed_threshold_slow = clamp(
               settings.stirrup_speed_threshold_slow,
               10,
               50,
             )
           "
+        />
+        <label> Threshold Forward</label>
+        <input
+          type="number"
+          v-model.number="settings.stirrup_forward_threshold"
+          @blur="
+            settings.stirrup_forward_threshold = clamp(settings.stirrup_forward_threshold, 40, 250)
+          "
+        />
+        <label> Threshold Backward</label>
+        <input
+          type="number"
+          v-model.number="settings.stirrup_backward_threshold"
+          @blur="
+            settings.stirrup_backward_threshold = clamp(
+              settings.stirrup_backward_threshold,
+              -50,
+              -250,
+            )
+          "
+        />
+        <label> Neutral Dead Zone</label>
+        <input
+          type="number"
+          v-model.number="settings.stirrup_dead_zone"
+          @blur="settings.stirrup_dead_zone = clamp(settings.stirrup_dead_zone, 5, 30)"
         />
       </div>
     </div>

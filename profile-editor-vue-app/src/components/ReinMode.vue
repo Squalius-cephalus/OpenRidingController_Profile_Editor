@@ -79,8 +79,8 @@ const reinmode = defineModel<ReinMode>()
         <input
           type="number"
           step="1"
-          v-model.number="reinmode.threshold"
-          @input="reinmode.threshold = clamp(reinmode.threshold, 100, 512)"
+          v-model.number="reinmode.keyboard_threshold"
+          @input="reinmode.keyboard_threshold = clamp(reinmode.keyboard_threshold, 100, 512)"
         />
       </div>
     </div>
