@@ -1,7 +1,10 @@
 ## OpenRidingController Profile Editor
 
 This tool is for **[OpenRidingController](https://github.com/Squalius-cephalus/OpenRidingController)**, a Vue-based app that allows users to customize controller key mappings and key functions. 
-### [Open the editor](https://squalius-cephalus.github.io/OpenRidingController_Profile_Editor/)
+## [Open the editor](https://squalius-cephalus.github.io/OpenRidingController_Profile_Editor/)
+
+[<img width="512" alt="screenshot"  src="https://github.com/user-attachments/assets/1a1787f3-5ca9-4a78-a676-1e6acb48eac2" />](https://squalius-cephalus.github.io/OpenRidingController_Profile_Editor/)
+
 
 ### Basic Usage
 
