@@ -4,7 +4,7 @@ export const ReinModeOptions = [
   { label: 'Keyboard', value: 'keyboard' },
 ] as const
 
-export const NunchuckOptions = [
+export const NunchukOptions = [
   { label: 'Mouse', value: 'mouse' },
   { label: 'Joystick', value: 'analog' },
 ] as const
@@ -14,7 +14,7 @@ export const ReinModeOptionsAxis = [
   { label: 'Right Joystick', value: 'RSX' },
 ] as const
 
-export const NunchuckOptionsAxis = [
+export const NunchukOptionsAxis = [
   { label: 'Left Joystick', value: 'LS' },
   { label: 'Right Joystick', value: 'RS' },
 ] as const
@@ -60,8 +60,8 @@ export const ButtonNames = [
   { label: 'Button 2 - (Controller Box Button)', value: 'button2' },
   { label: 'Button 3 - (Controller Box Button)', value: 'button3' },
   { label: 'Button 4 - (Controller Box Button)', value: 'button4' },
-  { label: 'Nunchuck C Button', value: 'nunchuck_c_button' },
-  { label: 'Nunchuck Z Button', value: 'nunchuck_z_button' },
-  { label: 'Nunchuck Left Flick', value: 'nunchuck_flick_left' },
-  { label: 'Nunchuck Right Flick', value: 'nunchuck_flick_right' },
+  { label: 'Nunchuk C Button', value: 'nunchuk_c_button' },
+  { label: 'Nunchuk Z Button', value: 'nunchuk_z_button' },
+  { label: 'Nunchuk Left Flick', value: 'nunchuk_flick_left' },
+  { label: 'Nunchuk Right Flick', value: 'nunchuk_flick_right' },
 ] as const

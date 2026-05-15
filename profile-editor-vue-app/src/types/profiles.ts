@@ -32,10 +32,10 @@ export interface Buttons {
   button3: ButtonConfig
   button4: ButtonConfig
 
-  nunchuck_c_button: ButtonConfig
-  nunchuck_z_button: ButtonConfig
-  nunchuck_flick_left: ButtonConfig
-  nunchuck_flick_right: ButtonConfig
+  nunchuk_c_button: ButtonConfig
+  nunchuk_z_button: ButtonConfig
+  nunchuk_flick_left: ButtonConfig
+  nunchuk_flick_right: ButtonConfig
 }
 
 export interface ReinMode {
@@ -50,7 +50,7 @@ export interface ReinMode {
   right_key: string
 }
 
-export interface NunchuckMode {
+export interface NunchukMode {
   mode: string
   sensitivity: number
   axis: string
@@ -60,7 +60,7 @@ export interface Profile {
   name: string
   settings: Settings
   rein_mode: ReinMode
-  nunchuck_mode: NunchuckMode
+  nunchuk_mode: NunchukMode
   buttons: Buttons
 }
 export interface Settings {

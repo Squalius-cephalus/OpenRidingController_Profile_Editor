@@ -22,7 +22,7 @@
     "left_key": "LEFT_ARROW",
     "right_key": "RIGHT_ARROW"
   },
-  "nunchuck_mode": {
+  "nunchuk_mode": {
     "mode": "mouse",
     "sensitivity": 1,
     "axis": "LS"
@@ -144,28 +144,28 @@
       "value": 0,
       "analog_value": 0
     },
-    "nunchuck_c_button": {
+    "nunchuk_c_button": {
       "mode": "mouse_button",
       "keycode": "RIGHT_BUTTON",
       "action": "hold",
       "value": 0.1,
       "analog_value": 0
     },
-    "nunchuck_z_button": {
+    "nunchuk_z_button": {
       "mode": "mouse_button",
       "keycode": "LEFT_BUTTON",
       "action": "hold",
       "value": 0.1,
       "analog_value": 0
     },
-    "nunchuck_flick_left": {
+    "nunchuk_flick_left": {
       "mode": "mouse_button",
       "keycode": "LEFT_BUTTON",
       "action": "tap",
       "value": 0,
       "analog_value": 0
     },
-    "nunchuck_flick_right": {
+    "nunchuk_flick_right": {
       "mode": "mouse_button",
       "keycode": "RIGHT_BUTTON",
       "action": "tap",

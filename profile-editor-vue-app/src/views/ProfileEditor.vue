@@ -8,7 +8,7 @@ import type { Profile } from '../types/profiles'
 
 import { computed } from 'vue'
 import { useProfiles } from '../composables/useProfiles'
-import NunchuckMode from '@/components/NunchuckMode.vue'
+import NunchukMode from '@/components/NunchukMode.vue'
 
 const { profiles, selectedIndex } = useProfiles()
 
@@ -201,7 +201,7 @@ function clone<T>(obj: T): T {
           <ReinMode v-if="selectedProfile" v-model="selectedProfile.rein_mode" />
         </div>
         <div class="section">
-          <NunchuckMode v-if="selectedProfile" v-model="selectedProfile.nunchuck_mode" />
+          <NunchukMode v-if="selectedProfile" v-model="selectedProfile.nunchuk_mode" />
         </div>
       </div>
       <div class="section">
