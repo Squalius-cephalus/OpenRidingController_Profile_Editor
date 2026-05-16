@@ -71,12 +71,13 @@ const visible = ref(false)
         <label> Threshold Fast</label>
         <input
           type="number"
+          step=0.01
           v-model.number="settings.stirrup_speed_threshold_fast"
           @blur="
             settings.stirrup_speed_threshold_fast = clamp(
               settings.stirrup_speed_threshold_fast,
-              10,
-              50,
+              0.05,
+              0.5,
             )
           "
         />
@@ -85,11 +86,12 @@ const visible = ref(false)
         <input
           type="number"
           v-model.number="settings.stirrup_speed_threshold_slow"
+          step=0.01
           @blur="
             settings.stirrup_speed_threshold_slow = clamp(
               settings.stirrup_speed_threshold_slow,
-              10,
-              50,
+              0.05,
+              0.5,
             )
           "
         />
@@ -108,8 +110,8 @@ const visible = ref(false)
           @blur="
             settings.stirrup_backward_threshold = clamp(
               settings.stirrup_backward_threshold,
-              -50,
               -250,
+              -50,
             )
           "
         />
